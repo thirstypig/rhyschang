@@ -1,77 +1,59 @@
-# Projects — James Chang
+# rhyschang.com
 
-Personal workspace containing all active and archived projects. Each folder is a self-contained product.
+Personal site for Rhys Chang. Plain HTML and CSS, no build step, published with
+GitHub Pages on the apex domain `rhyschang.com`.
 
----
+## Why no framework
 
-## Active Projects
+The site is meant to be managed by a beginner using Claude Code or Codex. Every
+build tool between "edit a file" and "see it live" is another thing that can
+break in someone's first ten minutes. So: no Node, no bundler, no `npm install`.
+Edit a file, push, wait a minute.
 
-| Folder                | Product / Domain              | Stack                          | Status   |
-|-----------------------|-------------------------------|--------------------------------|----------|
-| `thefantasticleagues` | thefantasticleagues.com       | React + Vite / Node + Express  | Active   |
-| `bbq-judge`           | thejudgetool.com              | Next.js / Node API             | Active   |
-| `ktv-singer`          | ktv app + server              | React Native / Express + WS    | Active   |
-| `tastemakers`         | tastemakersapp.com            | Next.js / Laravel / iOS / Android | Active |
-| `alephco.io`          | alephco.io                    | React + Vite + Express (unified) / Static | Active |
-| `bahtzang-trader`     | bahtzang.com                  | Next.js 14 / FastAPI (Python)  | Active   |
-| `tabledrop`           | tabledrop app                 | Next.js (Turborepo monorepo)   | Active   |
-| `jameschang.co`       | jameschang.co                 | Static HTML/CSS                | Active   |
-| `thirstypig`          | thirstypig content site       | Astro                          | Active   |
-| `cooper-stack3`       | internal tool                 | React / Express                | Occasional |
-| `vouch`               | vouch app                     | Next.js 16 / Supabase          | Active   |
-| `spar`                | spar.bahtzang.com (staging)   | Next.js 16 / Retell + Stripe   | Active   |
-| `shengchangmd`        | shengchangmd.bahtzang.com     | Astro 5 (static, trilingual)   | Active   |
+This mirrors `jameschang.co` rather than `shengchangmd`, which uses Astro.
 
----
+## Layout
 
-## Port Registry
-
-**See [MASTER-PORTS.md](./MASTER-PORTS.md) for the full registry** — reserved blocks, conventions, conflict-check script, and Claude context prompt.
-
-**See [PORTS.md](./PORTS.md) for the quick-reference table.**
-
-Each project folder contains its own:
-- `MASTER-PORTS.md` — full global registry (byte-identical copy of this root file)
-- `PORTS.md` — port assignments for that project only
-
-### Port Summary
-
-| Project                     | Frontend | API  | WS   | PG   | Redis |
-|-----------------------------|----------|------|------|------|-------|
-| thefantasticleagues (app)   | 3010     | 4010 | —    | 5442 | 6381  |
-| thefantasticleagues (www)   | 3011     | —    | —    | —    | —     |
-| bbq-judge (app)             | 3030     | 4030 | —    | 5444 | 6383  |
-| bbq-judge (www)             | 3031     | —    | —    | —    | —     |
-| ktv-singer                  | 3040     | 4040 | 8040 | —    | 6385  |
-| tastemakers (web)           | 3050     | —    | —    | —    | —     |
-| tastemakers (backend)       | —        | 4050 | —    | 5446 | 6384  |
-| alephco.io (app, unified)   | —        | 4060 | —    | —    | —     |
-| alephco.io (www, static)    | 3060     | —    | —    | —    | —     |
-| bahtzang-trader (frontend)  | 3070     | —    | —    | —    | —     |
-| bahtzang-trader (backend)   | —        | 4070 | —    | —    | —     |
-| tabledrop                   | 3080     | —    | —    | 5448 | 6387  |
-| jameschang.co               | 3090     | —    | —    | —    | —     |
-| thirstypig                  | 4321     | —    | —    | —    | —     |
-| cooper-stack3               | —        | 4100 | —    | —    | —     |
-| vouch                       | 3020     | —    | —    | —    | —     |
-| spar                        | 3110     | —    | —    | —    | —     |
-| shengchangmd                | 3120     | —    | —    | —    | —     |
-| **FUTURE-3** (reserved)     | 3130     | 4130 | —    | 5451 | 6390  |
-
----
-
-## Quick Conflict Check
-
-```bash
-lsof -i -P -n | grep LISTEN | grep -E '3010|3011|3020|3030|3031|3040|3050|3060|3070|3080|3090|3110|3120|4010|4030|4040|4050|4051|4060|4070|4100|4321|5442|5444|5445|5446|5448|6381|6383|6384|6385|6387|8040|24680|24681'
+```
+CNAME            hostname for GitHub Pages — must be the bare domain, one line
+.nojekyll        stops Jekyll from silently dropping files that start with _
+index.html       home page (placeholder)
+howto/index.html the guide, served at /howto
+style.css        shared styles for every page
 ```
 
----
+A new page at `/name` is a folder `name/` containing `index.html`. That is what
+keeps URLs clean — `name.html` would be served at the uglier `/name.html`.
 
-## Conventions
+## Local preview
 
-- Each product owns a **10-port block**: e.g., thefantasticleagues owns 3010–3019 (frontend) and 4010–4019 (API).
-- `-www` marketing sites share the same block as the `-app`, offset by 1.
-- PG ports start at 5442 (+1 per product). Redis at 6381 (+1 per product).
-- Claim a **FUTURE** slot before creating a new product — never freelance a port number.
-- When retiring a product, mark its block `AVAILABLE` in `MASTER-PORTS.md` for 30 days before reclaiming.
+No dev server and no port claimed in the registry. Open `index.html` in a
+browser, or if you want real URLs:
+
+```bash
+python3 -m http.server 8000
+```
+
+## Deploying
+
+Push to `main`. GitHub Pages rebuilds automatically, typically under a minute.
+There is no Actions workflow — Pages is configured to deploy from the branch.
+
+## DNS
+
+Registered at Squarespace. The Squarespace default records were removed and
+replaced with GitHub's:
+
+| Type  | Name  | Value                                              |
+|-------|-------|----------------------------------------------------|
+| A     | `@`   | `185.199.108.153` `.109.153` `.110.153` `.111.153` |
+| AAAA  | `@`   | `2606:50c0:8000::153` (optional, IPv6 only)        |
+| CNAME | `www` | `thirstypig.github.io`                             |
+
+The `www` CNAME target has no repository name on the end — that is a common
+mistake and breaks the connection.
+
+## Docs
+
+- [`docs/superpowers/specs/2026-07-31-rhyschang-site-design.md`](docs/superpowers/specs/2026-07-31-rhyschang-site-design.md) — design decisions and rationale
+- [`MASTER-PORTS.md`](MASTER-PORTS.md) / [`PORTS.md`](PORTS.md) — workspace-wide port registry (mirrored copies, per convention)
