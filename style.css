@@ -1,0 +1,206 @@
+/* rhyschang.com — shared styles
+   Plain CSS, no build step. Edit this file and the whole site changes. */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #555;
+  --paper: #fdfcfa;
+  --rule: #e2ded7;
+  --accent: #b8482e;
+  --claude: #c96442;
+  --codex: #3a6ea5;
+  --code-bg: #f4f1ec;
+  --measure: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ece8e1;
+    --ink-soft: #a8a29a;
+    --paper: #1b1a18;
+    --rule: #38352f;
+    --accent: #e08060;
+    --claude: #e08060;
+    --codex: #7aa8d8;
+    --code-bg: #262420;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1.25rem 6rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: var(--measure); margin: 0 auto; }
+.wrap--wide { max-width: 58rem; }
+
+/* ---------- type ---------- */
+
+h1 {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 3.5rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+h3 { font-size: 1.1rem; margin: 2rem 0 0.5rem; }
+
+p { margin: 0 0 1.1rem; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+.lede { font-size: 1.15rem; color: var(--ink-soft); margin-bottom: 2rem; }
+
+.tagline { color: var(--ink-soft); margin-bottom: 2.5rem; }
+
+/* ---------- code ---------- */
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0 0 1rem;
+}
+
+pre code { background: none; padding: 0; font-size: 0.95rem; }
+
+/* ---------- steps ---------- */
+
+.step { margin: 0 0 3rem; }
+
+.step-num {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- two-column tool blocks ----------
+   Desktop: Claude Code left, Codex right.
+   Mobile: they stack, so each keeps a permanent label and a
+   colored left border — that is how you tell at a glance which
+   one you are reading once they are no longer side by side. */
+
+.tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 43rem) {
+  .tools { grid-template-columns: 1fr; }
+}
+
+.tool {
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--rule);
+  border-radius: 8px;
+  padding: 1rem 1.1rem 1.2rem;
+  min-width: 0;
+}
+
+.tool--claude { border-left-color: var(--claude); }
+.tool--codex  { border-left-color: var(--codex); }
+
+.tool-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.tool--claude .tool-name { color: var(--claude); }
+.tool--codex  .tool-name { color: var(--codex); }
+
+.tool p:last-child, .tool pre:last-child { margin-bottom: 0; }
+
+/* ---------- prompt bank ---------- */
+
+.prompt {
+  background: var(--code-bg);
+  border-left: 4px solid var(--rule);
+  border-radius: 0 6px 6px 0;
+  padding: 0.8rem 1rem;
+  margin: 0 0 0.85rem;
+}
+
+.prompt p { margin: 0; }
+
+.prompt-why {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 0.35rem;
+}
+
+/* ---------- callouts ---------- */
+
+.note {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin: 1.5rem 0;
+  background: var(--code-bg);
+}
+
+.note p:last-child { margin-bottom: 0; }
+.note strong { color: var(--accent); }
+
+/* ---------- nav / footer ---------- */
+
+.back {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+.back:hover { color: var(--accent); }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- home ---------- */
+
+.home-links { list-style: none; padding: 0; margin: 2rem 0 0; }
+
+.home-links li { margin-bottom: 0.75rem; }
+
+.home-links a { font-size: 1.15rem; font-weight: 600; }
+
+.home-links span { display: block; font-size: 0.95rem; color: var(--ink-soft); }
