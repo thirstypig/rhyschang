@@ -356,12 +356,8 @@ html[data-theme="dark"] .big-link { color: #06241a; }
   padding: 0;
   margin: 1.25rem 0 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 0.9rem;
-}
-
-@media (max-width: 34rem) {
-  .cousin-grid { grid-template-columns: 1fr; }
 }
 
 .cousin {
@@ -379,6 +375,7 @@ html[data-theme="dark"] .big-link { color: #06241a; }
 
 .cousin--pink { background: var(--pink); }
 .cousin--sun  { background: var(--sun); }
+.cousin--mint { background: var(--mint); }
 
 .cousin b {
   display: block;
