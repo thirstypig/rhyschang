@@ -1,67 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rhys Chang</title>
-<meta name="description" content="rhyschang.com — a personal site under construction.">
+<meta name="description" content="Rhys Chang's website. It's brand new.">
+<script>
+/* Set the colours before the page draws, so it never flashes the wrong one. */
+(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+<div class="topbar">
+  <span class="back">rhyschang.com</span>
+  <button class="btn" id="theme-btn" type="button">🌙 Night</button>
+</div>
+
 <main class="wrap">
 
-  <h1>Rhys Chang</h1>
-  <p class="tagline">This is my website. It&rsquo;s just getting started.</p>
+  <h1><span class="pop">R</span><span class="pop">h</span><span class="pop">y</span><span class="pop">s</span> Chang</h1>
+  <p class="tagline">Hi! This is my website.</p>
 
-  <p>There isn&rsquo;t much here yet. The first thing built was the instructions
-  for how to run it &mdash; so the next thing that goes here can be put there by
-  me.</p>
+  <p>It&rsquo;s brand new, so it&rsquo;s a bit empty.</p>
+
+  <p>That&rsquo;s okay. Empty means there&rsquo;s <b>lots of room</b> for good
+  stuff.</p>
 
   <ul class="home-links">
     <li>
-      <a href="/howto">How to run this site &rarr;</a>
-      <span>Step-by-step instructions for setting up, changing, and publishing this site.</span>
+      <a class="big-link" href="/howto">
+        <b>How to build this website &rarr;</b>
+        <span>Every step, from the very beginning. You can do this.</span>
+      </a>
     </li>
   </ul>
 
-  <!-- Ideas box. Rhys: cross things off and add your own. -->
+  <!-- Rhys: add your own ideas to this list. Take away ones you don't like. -->
   <section class="ideas">
-    <h2>Ideas for this site</h2>
-    <p>Things that could go here. None of them are required, and you can
-    always add something that isn&rsquo;t on this list.</p>
-    <ul>
-      <li>About me &mdash; who I am, what I like</li>
-      <li>Photos I&rsquo;ve taken</li>
-      <li>Things I&rsquo;ve built or made</li>
-      <li>Games I&rsquo;m playing right now</li>
-      <li>Sports and teams I follow</li>
-      <li>Music I&rsquo;m into</li>
-      <li>Books or shows worth recommending</li>
-      <li>Drawings and art</li>
-      <li>Videos I&rsquo;ve made</li>
-      <li>School projects I&rsquo;m proud of</li>
-      <li>Collections &mdash; cards, Lego, shoes, anything</li>
-      <li>A list of my favourite things</li>
-      <li>Places I&rsquo;ve been</li>
-      <li>Jokes, or just something funny</li>
-      <li>A blog &mdash; write whenever I feel like it</li>
-      <li>Links to my other accounts</li>
+    <h2>What should go here?</h2>
+    <p>Some ideas. You don&rsquo;t have to pick any of them &mdash; you can think
+    of something completely different.</p>
+    <ul class="sticker-sheet">
+      <li>👋 About me</li>
+      <li>🎨 My drawings</li>
+      <li>🦖 Dinosaurs</li>
+      <li>🧱 My LEGO</li>
+      <li>⚽ Sports I like</li>
+      <li>🐶 Animals</li>
+      <li>🚀 Space</li>
+      <li>🎮 Games I play</li>
+      <li>📚 Best books</li>
+      <li>🎵 Songs I like</li>
+      <li>📸 Photos I took</li>
+      <li>🍕 Best foods</li>
+      <li>✈️ Places I&rsquo;ve been</li>
+      <li>😂 Funny jokes</li>
+      <li>🏆 Things I made</li>
+      <li>🌈 My favourite colours</li>
     </ul>
   </section>
 
   <div class="ask">
-    <p class="big">Want to build something here, or change what&rsquo;s already
-    on it?</p>
-    <p>Start with <a href="/howto">the instructions</a> &mdash; they cover the
-    whole thing from the beginning. And if you get stuck anywhere, or something
-    looks broken, or you just want to talk through an idea first: <b>ask Uncle
-    Jimmy</b>. That&rsquo;s what he&rsquo;s there for.</p>
+    <span class="big">Want to make something?</span>
+    <p>Start with <a href="/howto">how to build this website</a>. It shows you
+    every step.</p>
+    <p>And if you get stuck, or something looks funny, or you just want to talk
+    about an idea first &mdash; <b>ask Uncle Jimmy</b>. That&rsquo;s what
+    he&rsquo;s for.</p>
   </div>
 
   <footer>
-    <p>rhyschang.com</p>
+    <p>rhyschang.com &mdash; made by Rhys 🛠️</p>
   </footer>
 
 </main>
+
+<script src="/theme.js"></script>
 </body>
 </html>
