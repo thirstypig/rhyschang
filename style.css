@@ -13,18 +13,12 @@
   --measure: 42rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #ece8e1;
-    --ink-soft: #a8a29a;
-    --paper: #1b1a18;
-    --rule: #38352f;
-    --accent: #e08060;
-    --claude: #e08060;
-    --codex: #7aa8d8;
-    --code-bg: #262420;
-  }
-}
+/* This site is light mode only, on purpose. It looks the same for
+   everybody, whatever their computer is set to. If you ever want it to
+   follow the visitor's dark mode setting instead, ask your tool to
+   "add a dark mode to style.css". */
+
+html { color-scheme: light; }
 
 * { box-sizing: border-box; }
 
@@ -204,3 +198,69 @@ footer {
 .home-links a { font-size: 1.15rem; font-weight: 600; }
 
 .home-links span { display: block; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* ---------- ideas box ---------- */
+
+.ideas {
+  border: 2px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem 1.5rem;
+  margin: 2.5rem 0;
+  background: var(--code-bg);
+}
+
+.ideas h2 {
+  margin: 0 0 0.3rem;
+  padding: 0;
+  border: none;
+  font-size: 1.15rem;
+}
+
+.ideas > p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 1.1rem;
+}
+
+.ideas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+@media (max-width: 34rem) {
+  .ideas ul { grid-template-columns: 1fr; }
+}
+
+.ideas li {
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.ideas li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- ask blurb ---------- */
+
+.ask {
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.ask p { margin-bottom: 0.5rem; }
+
+.ask .big {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+}

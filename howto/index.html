@@ -13,145 +13,149 @@
   <a class="back" href="/">&larr; rhyschang.com</a>
 
   <h1>How to run this site</h1>
-  <p class="lede">Everything you need to set up, change, and publish this website
-  yourself. You don&rsquo;t need to know how to code. You need to be able to type
-  and to read carefully.</p>
+  <p class="lede">How to set up this website, change it, and put your changes
+  online. You don&rsquo;t need to know how to code. You just need to type what
+  you&rsquo;re told and read what comes back.</p>
 
   <div class="note">
-    <p><strong>Two tools, two columns.</strong> This guide covers
-    <b>Claude Code</b> and <b>Codex</b>. They do the same job. Pick one and
-    follow only its column &mdash; Claude Code is on the left, Codex on the right.
-    On a phone the columns stack, so look for the coloured label at the top of
-    each box to know which one you&rsquo;re reading.</p>
+    <p><strong>Two tools, two columns.</strong> This guide covers two tools:
+    <b>Claude Code</b> and <b>Codex</b>. They both do the same job, so pick one.
+    Claude Code is in the left box, Codex is in the right box. Only follow your
+    one. On a phone the boxes go one above the other, so check the coloured name
+    at the top of each box.</p>
   </div>
 
   <!-- ============================================ -->
-  <h2>1. What this site actually is</h2>
+  <h2>1. What this site is</h2>
 
-  <p>Three things work together. It helps to know what each one does before you
-  touch anything.</p>
+  <p>Three things work together to make this website. Here&rsquo;s what each one
+  does.</p>
 
-  <p><b>The files.</b> This website is a folder of files on a computer. Each page
-  is one file. The page you&rsquo;re reading right now is a file called
-  <code>howto/index.html</code>. That&rsquo;s it &mdash; there&rsquo;s no magic.</p>
+  <p><b>The files.</b> This website is just a folder of files. Each page is one
+  file. The page you&rsquo;re reading right now is a file called
+  <code>howto/index.html</code>. That&rsquo;s all a website is.</p>
 
-  <p><b>GitHub.</b> A website that stores those files and keeps a history of every
-  change ever made. The copy lives at
-  <a href="https://github.com/thirstypig/rhyschang">github.com/thirstypig/rhyschang</a>.
-  Because it keeps history, nothing you do is permanent. Anything can be undone.</p>
+  <p><b>GitHub.</b> A website that holds those files for you. It also saves a copy
+  of every change anyone has ever made. That means nothing you do is forever. You
+  can always go back.</p>
 
-  <p><b>GitHub Pages.</b> A free service that takes those files and puts them on
-  the internet at <code>rhyschang.com</code>. Whenever the files on GitHub change,
-  it rebuilds the site automatically, usually in under a minute.</p>
+  <p>Your files live here:
+  <a href="https://github.com/thirstypig/rhyschang">github.com/thirstypig/rhyschang</a></p>
+
+  <p><b>GitHub Pages.</b> A free service that takes your files and puts them on the
+  internet at <code>rhyschang.com</code>. When your files change, it updates the
+  website by itself. It usually takes less than a minute.</p>
 
   <p>So the whole job is: <b>change a file &rarr; send it to GitHub &rarr; wait a
-  minute.</b> Every instruction below is a version of those three steps.</p>
+  minute.</b> Everything below is a version of those three steps.</p>
 
   <!-- ============================================ -->
-  <h2>2. One-time setup</h2>
+  <h2>2. Setting up (you only do this once)</h2>
 
-  <p>You only do this section once, ever. It&rsquo;s the longest part. After this,
-  making a change takes about two minutes.</p>
+  <p>This is the longest part. You only do it one time, ever. After this,
+  changing something takes about two minutes.</p>
 
   <div class="step">
     <span class="step-num">Step 1</span>
-    <h3>Get a GitHub account and access to the site</h3>
+    <h3>Get a GitHub account</h3>
     <p>Go to <a href="https://github.com/signup">github.com/signup</a> and make an
-    account. You&rsquo;ll need an email address you can check, because they send you
-    a code.</p>
-    <p>Then tell James your GitHub username. He&rsquo;ll invite you to the
-    repository (that&rsquo;s the word for the folder of files). You&rsquo;ll get an
-    email with an <b>Accept invitation</b> button. Click it. Without this you can
-    read the files but not change them.</p>
+    account. You&rsquo;ll need an email you can check, because they send you a
+    code.</p>
+    <p>Then tell Uncle Jimmy your GitHub username. He&rsquo;ll add you to the
+    site&rsquo;s files. You&rsquo;ll get an email with a button that says
+    <b>Accept invitation</b>. Click it.</p>
+    <p>Until you click that, you can look at the files but you can&rsquo;t change
+    them.</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 2</span>
     <h3>Open the Terminal</h3>
-    <p>The Terminal is an app where you type commands instead of clicking buttons.
-    It looks intimidating and isn&rsquo;t.</p>
-    <p>On a Mac: press <code>Command</code> and <code>Space</code> together, type
-    <code>Terminal</code>, press <code>Enter</code>. A window with a blinking cursor
-    opens. On Windows, search for <code>Terminal</code> in the Start menu.</p>
-    <p>From here on, &ldquo;type this&rdquo; means: type it into that window and
-    press <code>Enter</code>.</p>
+    <p>The Terminal is an app where you type instead of clicking. It looks scary.
+    It isn&rsquo;t.</p>
+    <p>On a Mac: hold <code>Command</code> and press <code>Space</code>. Type
+    <code>Terminal</code>. Press <code>Enter</code>. A window opens with a blinking
+    cursor.</p>
+    <p>On Windows: search for <code>Terminal</code> in the Start menu.</p>
+    <p>From now on, when this guide says &ldquo;type this,&rdquo; it means type it
+    in that window and press <code>Enter</code>.</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 3</span>
     <h3>Install your tool</h3>
-    <p>Both tools need a program called Node.js first. Get it from
-    <a href="https://nodejs.org">nodejs.org</a> &mdash; download the version it
-    recommends and run the installer like any other app. Then come back to the
-    Terminal and install your tool:</p>
+    <p>First you need a program called Node. Go to
+    <a href="https://nodejs.org">nodejs.org</a>, download the one it suggests, and
+    install it like any other app.</p>
+    <p>Then come back to the Terminal and type the line for your tool:</p>
 
     <div class="tools">
       <div class="tool tool--claude">
         <p class="tool-name">Claude Code</p>
         <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
-        <p>Official instructions, if that command ever changes:
-        <a href="https://docs.claude.com/en/docs/claude-code/setup">docs.claude.com</a></p>
+        <p>If that line ever stops working, the real instructions are at
+        <a href="https://docs.claude.com/en/docs/claude-code/setup">docs.claude.com</a>.</p>
       </div>
       <div class="tool tool--codex">
         <p class="tool-name">Codex</p>
         <pre><code>npm install -g @openai/codex</code></pre>
-        <p>Official instructions, if that command ever changes:
-        <a href="https://developers.openai.com/codex/cli">developers.openai.com</a></p>
+        <p>If that line ever stops working, the real instructions are at
+        <a href="https://developers.openai.com/codex/cli">developers.openai.com</a>.</p>
       </div>
     </div>
 
     <div class="note">
-      <p><strong>If you see a wall of red text</strong> mentioning
-      <code>permission denied</code> or <code>EACCES</code>, the install was blocked
-      rather than broken. Copy the whole message, paste it into a search engine or
-      ask an adult &mdash; it&rsquo;s a common, fixable setup problem, not something
-      you did wrong.</p>
+      <p><strong>If you get a bunch of red text</strong> that says
+      <code>permission denied</code> or <code>EACCES</code>, nothing is broken.
+      Your computer just blocked it. Show it to Uncle Jimmy &mdash; it&rsquo;s a
+      normal setup problem and it&rsquo;s quick to fix.</p>
     </div>
   </div>
 
   <div class="step">
     <span class="step-num">Step 4</span>
     <h3>Sign in</h3>
-    <p>Start your tool for the first time. It will open a browser window and ask you
-    to log in. Each tool needs its own paid account &mdash; Claude Code needs a
-    Claude plan, Codex needs a ChatGPT plan.</p>
+    <p>Start your tool for the first time. It opens a web page and asks you to log
+    in. Each tool needs its own paid account, so check with Uncle Jimmy about which
+    one you have.</p>
 
     <div class="tools">
       <div class="tool tool--claude">
         <p class="tool-name">Claude Code</p>
         <pre><code>claude</code></pre>
-        <p>Follow the sign-in prompts with your Claude account.</p>
+        <p>Log in with your Claude account.</p>
       </div>
       <div class="tool tool--codex">
         <p class="tool-name">Codex</p>
         <pre><code>codex</code></pre>
-        <p>Follow the sign-in prompts with your ChatGPT account.</p>
+        <p>Log in with your ChatGPT account.</p>
       </div>
     </div>
   </div>
 
   <div class="step">
     <span class="step-num">Step 5</span>
-    <h3>Copy the site onto your computer</h3>
+    <h3>Copy the website onto your computer</h3>
     <p>Type these two lines, one at a time:</p>
     <pre><code>cd ~/Documents
 git clone https://github.com/thirstypig/rhyschang.git</code></pre>
-    <p>The first line moves you into your Documents folder. The second downloads
-    the whole site into a new folder called <code>rhyschang</code>.</p>
-    <p>Now go into it. You&rsquo;ll type this line every time you sit down to work
-    on the site:</p>
+    <p>The first line moves you into your Documents folder. The second one
+    downloads the whole website into a new folder called
+    <code>rhyschang</code>.</p>
+    <p>Now go inside that folder:</p>
     <pre><code>cd ~/Documents/rhyschang</code></pre>
-    <p>Setup done. You never have to do section 2 again.</p>
+    <p>You&rsquo;ll type that last line every time you work on the site.</p>
+    <p><b>That&rsquo;s setup done.</b> You never have to do this part again.</p>
   </div>
 
   <!-- ============================================ -->
-  <h2>3. Making your first change</h2>
+  <h2>3. Changing something for the first time</h2>
 
-  <p>Let&rsquo;s change one word and put it on the internet.</p>
+  <p>Let&rsquo;s change one line and put it on the internet.</p>
 
   <div class="step">
     <span class="step-num">Step 1</span>
-    <h3>Go to the folder and start your tool</h3>
+    <h3>Go to the folder, then start your tool</h3>
     <div class="tools">
       <div class="tool tool--claude">
         <p class="tool-name">Claude Code</p>
@@ -164,85 +168,88 @@ claude</code></pre>
 codex</code></pre>
       </div>
     </div>
-    <p>Starting the tool <em>inside</em> the folder matters. That&rsquo;s how it
-    knows which files you mean.</p>
+    <p>Starting the tool <em>inside</em> the folder is important. That&rsquo;s how
+    it knows which files you&rsquo;re talking about.</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 2</span>
-    <h3>Ask for the change in plain English</h3>
-    <p>Type this and press Enter. Same words for either tool:</p>
+    <h3>Ask for what you want, in normal words</h3>
+    <p>Type this and press Enter. It&rsquo;s the same for both tools:</p>
     <div class="prompt">
-      <p>On the home page, change the line that says &ldquo;This site is just
-      getting started&rdquo; to say something about me instead.</p>
+      <p>On the home page, change the line that says &ldquo;This is my website&rdquo;
+      to say something about me instead.</p>
     </div>
-    <p>The tool will find the file, show you what it wants to change, and ask
-    permission. Read what it&rsquo;s proposing. If it looks right, say yes.</p>
+    <p>The tool finds the file, shows you what it wants to change, and asks if
+    that&rsquo;s okay. Read it. If it looks right, say yes.</p>
   </div>
 
   <div class="step">
     <span class="step-num">Step 3</span>
-    <h3>Publish it</h3>
-    <p>The change is only on your computer so far. To put it on the internet, ask:</p>
+    <h3>Put it online</h3>
+    <p>Right now your change is only on your own computer. To put it on the
+    internet, ask:</p>
     <div class="prompt">
       <p>Save this change and publish it to the website.</p>
     </div>
-    <p>The tool handles the technical steps. Wait about a minute, then open
-    <a href="https://rhyschang.com">rhyschang.com</a> in a browser. Your change is
-    live.</p>
+    <p>The tool does the rest. Wait about a minute, then go to
+    <a href="https://rhyschang.com">rhyschang.com</a>. Your change is there.</p>
     <div class="note">
-      <p><strong>Don&rsquo;t panic if it looks unchanged.</strong> Browsers keep old
-      copies of pages. Hold <code>Shift</code> and click reload to force a fresh
-      one. If it&rsquo;s still old, wait another minute &mdash; the site takes a
-      moment to rebuild.</p>
+      <p><strong>If the page looks the same, don&rsquo;t worry.</strong> Web
+      browsers save old copies of pages. Hold <code>Shift</code> and click reload
+      to get a fresh one. If it&rsquo;s still old, wait one more minute. The site
+      takes a moment to update.</p>
     </div>
   </div>
 
   <!-- ============================================ -->
-  <h2>4. What just happened</h2>
+  <h2>4. What those three words mean</h2>
 
-  <p>Three things happened when you said &ldquo;publish&rdquo;. You don&rsquo;t
-  need to memorise these, but knowing the words makes error messages readable.</p>
+  <p>When you said &ldquo;publish,&rdquo; three things happened. You don&rsquo;t
+  have to remember them. But knowing the words makes error messages a lot easier
+  to read later.</p>
 
-  <p><b>Commit.</b> Your change got saved as a labelled snapshot, with a note about
-  what changed. The full history is kept, so you can always go back.</p>
+  <p><b>Commit</b> means your change got saved, with a little note about what you
+  changed. All of these are kept, so you can always go back to an older one.</p>
 
-  <p><b>Push.</b> That snapshot got uploaded from your computer to GitHub.</p>
+  <p><b>Push</b> means that saved change got sent from your computer up to
+  GitHub.</p>
 
-  <p><b>Build.</b> GitHub noticed the new files and rebuilt the website. This is the
-  part that takes about a minute.</p>
+  <p><b>Build</b> means GitHub saw the new files and updated the website. This is
+  the part that takes about a minute.</p>
 
-  <p>When something goes wrong, it&rsquo;s almost always one of these three, and the
-  error message will name which one.</p>
+  <p>When something goes wrong, it&rsquo;s almost always one of these three &mdash;
+  and the error message will tell you which one.</p>
 
   <!-- ============================================ -->
   <h2>5. Adding a new page</h2>
 
-  <p>Say you want <code>rhyschang.com/music</code>. Just ask:</p>
+  <p>Say you want a page at <code>rhyschang.com/music</code>. Just ask:</p>
   <div class="prompt">
-    <p>Add a new page at /music. Match the style of the existing pages, and put a
-    link to it on the home page.</p>
+    <p>Add a new page at /music. Make it look like the pages I already have, and
+    put a link to it on the home page.</p>
   </div>
 
-  <p>Behind the scenes it creates a folder called <code>music</code> with a file
-  called <code>index.html</code> inside it. That&rsquo;s the trick to clean web
-  addresses: a folder named <code>music</code> containing <code>index.html</code>
-  becomes <code>/music</code>. If you made a file called <code>music.html</code>
-  instead, the address would be the uglier <code>/music.html</code>.</p>
+  <p>What happens behind the scenes: it makes a folder called <code>music</code>
+  with a file called <code>index.html</code> inside it. That&rsquo;s the trick to
+  getting a short web address. A folder named <code>music</code> with
+  <code>index.html</code> inside becomes <code>/music</code>. If you made a file
+  called <code>music.html</code> instead, the address would be the uglier
+  <code>/music.html</code>.</p>
 
-  <p>Always ask for the home page link in the same breath. A page nobody can click
-  to is a page nobody will find.</p>
+  <p>Always ask for the home page link at the same time. If nothing links to your
+  new page, nobody can find it.</p>
 
   <!-- ============================================ -->
-  <h2>6. Prompts that work</h2>
+  <h2>6. Things you can ask for</h2>
 
-  <p>Copy these and change the details. The pattern that works is
+  <p>Copy these and change the details to whatever you want. The trick is to
   <b>say what you want, not how to do it</b>.</p>
 
-  <h3>Easy</h3>
+  <h3>Easy ones to start with</h3>
   <div class="prompt">
     <p>Change the title on the home page to my full name.</p>
-    <span class="prompt-why">Good first one. Small, obvious, easy to check.</span>
+    <span class="prompt-why">A good first one. Small, and easy to check.</span>
   </div>
   <div class="prompt">
     <p>Add a short paragraph about me under the title on the home page.</p>
@@ -251,70 +258,80 @@ codex</code></pre>
     <p>Add a link to my Instagram at the bottom of the home page.</p>
   </div>
 
-  <h3>Bigger</h3>
+  <h3>Bigger ones</h3>
   <div class="prompt">
-    <p>Add a page at /about with a few paragraphs about me, and link to it from the
-    home page.</p>
+    <p>Add a page at /about with a few paragraphs about me, and link to it from
+    the home page.</p>
   </div>
   <div class="prompt">
-    <p>Make the whole site use a different colour scheme &mdash; something darker.
-    Change it in style.css so every page updates at once.</p>
-    <span class="prompt-why">Colours live in one place at the top of
-    <code>style.css</code>. Change them there, not page by page.</span>
+    <p>Change the colours of the whole site to blue and grey. Do it in style.css
+    so every page changes at once.</p>
+    <span class="prompt-why">All the colours live in one place at the top of
+    <code>style.css</code>. Change them there and every page updates.</span>
   </div>
   <div class="prompt">
-    <p>Add a photo to the home page. I&rsquo;ll put the image file in the folder
+    <p>Add a photo to the home page. I&rsquo;ll put the picture in the folder
     first.</p>
   </div>
 
-  <h3>Asking questions instead of changes</h3>
+  <h3>Asking questions instead of making changes</h3>
   <div class="prompt">
-    <p>Explain what this repository contains, like I&rsquo;ve never seen it before.</p>
-    <span class="prompt-why">Great when you come back after a few months.</span>
+    <p>Explain what&rsquo;s in this folder, like I&rsquo;ve never seen it before.</p>
+    <span class="prompt-why">Handy when you come back after a few months and
+    forgot everything.</span>
   </div>
   <div class="prompt">
-    <p>Show me what I changed but haven&rsquo;t published yet.</p>
+    <p>Show me what I&rsquo;ve changed but haven&rsquo;t published yet.</p>
   </div>
 
-  <h3>Prompts that go badly</h3>
-  <p>These fail because they&rsquo;re vague, so the tool has to guess &mdash; and it
-  guesses something you didn&rsquo;t want:</p>
-  <p><em>&ldquo;Make it better.&rdquo;</em> &mdash; Better how? Say what bothers you.<br>
-  <em>&ldquo;Fix the website.&rdquo;</em> &mdash; Fix what? Describe what you see
-  that&rsquo;s wrong.<br>
-  <em>&ldquo;Add stuff to the page.&rdquo;</em> &mdash; Which page, and what stuff?</p>
+  <h3>Ones that don&rsquo;t work</h3>
+  <p>These don&rsquo;t work because they&rsquo;re too vague. The tool has to guess,
+  and it usually guesses something you didn&rsquo;t want:</p>
+  <p><em>&ldquo;Make it better.&rdquo;</em> &mdash; Better how? Say what you
+  don&rsquo;t like.<br>
+  <em>&ldquo;Fix the website.&rdquo;</em> &mdash; Fix what? Say what looks
+  wrong.<br>
+  <em>&ldquo;Add stuff to the page.&rdquo;</em> &mdash; Which page? What stuff?</p>
 
   <!-- ============================================ -->
-  <h2>7. When something breaks</h2>
+  <h2>7. If something breaks</h2>
 
-  <p>Nothing here is dangerous. The history is kept, the site can always be put
-  back. The worst realistic outcome is a broken-looking page for a few minutes.</p>
+  <p>You can&rsquo;t really break this. Every old version is saved, so the site can
+  always be put back. The worst that happens is the page looks weird for a few
+  minutes.</p>
 
-  <p><b>The page looks wrong or empty.</b> Ask your tool:</p>
+  <p><b>The page looks wrong or empty.</b> Ask:</p>
   <div class="prompt">
     <p>The home page looks broken. Can you check what I changed and fix it?</p>
   </div>
 
-  <p><b>You want to undo the last thing you did.</b></p>
+  <p><b>You want to undo what you just did.</b> Ask:</p>
   <div class="prompt">
     <p>Undo my last change and put the site back how it was.</p>
   </div>
 
-  <p><b>The site isn&rsquo;t updating.</b> Wait two minutes and hard-reload
-  (<code>Shift</code> + reload). If it&rsquo;s still stale, the publish step
-  probably didn&rsquo;t finish &mdash; ask:</p>
+  <p><b>The website isn&rsquo;t updating.</b> Wait two minutes, then hold
+  <code>Shift</code> and click reload. If it&rsquo;s still old, ask:</p>
   <div class="prompt">
     <p>Did my last change actually get published? Check and tell me what happened.</p>
   </div>
 
-  <p><b>An error message you don&rsquo;t understand.</b> Paste it straight into your
-  tool and ask what it means. Don&rsquo;t retype it or summarise it &mdash; the
-  exact text is the useful part.</p>
+  <p><b>You got an error you don&rsquo;t understand.</b> Copy the whole thing and
+  paste it to your tool, then ask what it means. Paste the exact words &mdash;
+  don&rsquo;t retype it or shorten it. The exact words are the useful part.</p>
 
   <div class="note">
-    <p><strong>The one rule.</strong> Read what the tool proposes before you say
-    yes. It&rsquo;s usually right, but it&rsquo;s your site. Saying &ldquo;no, do it
-    this way instead&rdquo; is a normal part of the conversation, not a failure.</p>
+    <p><strong>One rule.</strong> Read what the tool says it&rsquo;s going to do
+    before you say yes. It&rsquo;s usually right, but it&rsquo;s your website.
+    Saying &ldquo;no, do it this way instead&rdquo; is a totally normal thing to
+    do.</p>
+  </div>
+
+  <div class="ask">
+    <p class="big">Stuck?</p>
+    <p>If something isn&rsquo;t working, or you don&rsquo;t understand a step, or
+    you just want help figuring out what to build &mdash; <b>ask Uncle
+    Jimmy</b>.</p>
   </div>
 
   <footer>
