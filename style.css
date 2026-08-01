@@ -362,12 +362,16 @@ html[data-theme="dark"] .big-link { color: #06241a; }
   padding: 0;
   margin: 1.25rem 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 0.9rem;
 }
 
+/* let every card fill its row, so a longer name doesn't make one card taller */
+.cousin-grid li { display: flex; }
+
 .cousin {
   display: block;
+  width: 100%;
   color: #17263f;
   border: 3px solid var(--ink);
   border-radius: 18px;
@@ -386,8 +390,9 @@ html[data-theme="dark"] .big-link { color: #06241a; }
 .cousin b {
   display: block;
   font-family: Fredoka, sans-serif;
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .cousin span { display: block; font-size: 0.92rem; font-weight: 700; opacity: 0.75; }
