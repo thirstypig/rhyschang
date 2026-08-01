@@ -152,8 +152,12 @@ pre {
   border: 2px dashed var(--rule);
   padding: 0.85rem 1rem;
   border-radius: 10px;
-  overflow-x: auto;
   margin: 0 0 1rem;
+  /* Wrap long commands instead of hiding them off the edge. A command you
+     can only half see is a command you'll only half type. Line breaks in
+     the original are still kept. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 pre code { background: none; padding: 0; font-size: 0.95rem; }
