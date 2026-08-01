@@ -13,11 +13,17 @@ The guide is the product. The rest of the site follows later.
 
 ## Audience
 
-A total beginner, kid-friendly. No GitHub account, no terminal experience, no
-coding. Every dev concept is explained on first use or avoided. Instructions
-start from "install this app" and "make an account."
+A total beginner, kid-friendly — pitched at roughly a five-year-old. No GitHub
+account, no terminal experience, no coding. Every dev concept is explained on
+first use or avoided.
 
-This single constraint drove most decisions below.
+A five-year-old cannot actually install Node or use a terminal alone. Rather
+than pretend otherwise, the guide carries "grown-up helps" badges on the four
+steps that genuinely need an adult (GitHub account, Node install, tool install,
+sign-in), and both pages end by pointing at Uncle Jimmy. The page is written to
+be read *with* someone, not alone.
+
+This constraint drove most decisions below.
 
 ## Decisions
 
@@ -68,6 +74,23 @@ elsewhere; leaving them in place blocks the switch.
 Replaced with GitHub's four apex A records, one AAAA record, and
 `www → thirstypig.github.io`. Verified live before launch.
 
+### Visual language: whimsical, with a day/night switch
+
+Fredoka (display) over Nunito (body). Sky-blue day palette, deep-indigo night
+palette, four accents: pink, marigold, mint, grape. Chunky 3px outlines with
+hard offset shadows rather than soft blurs — the look reads as sticker-book
+rather than corporate card UI.
+
+The signature element is the ideas list: each idea is a tilted sticker that
+straightens and lifts on hover. It encodes something true — these are things
+that can be peeled off and stuck onto the site.
+
+Light and dark are a manual toggle, not `prefers-color-scheme`. A child should
+be able to press a button and see the site change; following an OS setting they
+can't find is invisible. The choice persists in `localStorage`, and an inline
+head script applies it before first paint so the page never flashes the wrong
+theme.
+
 ### No port claimed
 
 A static site with no build needs no dev server. This also sidesteps a capacity
@@ -78,10 +101,19 @@ sibling folders appeared on 2026-07-31 (`rhyschang`, `jarrenchang`,
 ## Page structure
 
 ```
-index.html        placeholder — name, one line, link to /howto
+index.html        home — name, ideas stickers, family links, handover promise
 howto/index.html  the guide
 style.css         shared
+theme.js          day/night toggle
+favicon.svg       grape tile, white R
 ```
+
+The home page carries outbound links to `tobinchang.com`, `jarrenchang.com`,
+and `jameschang.co/now`. All three were verified live before linking — a dead
+link on a child's page reads as a broken site.
+
+It also states plainly that Uncle Jimmy currently holds the domain and hosting,
+and promises to transfer both when Rhys is ready.
 
 `/howto` is `howto/index.html`, not `howto.html`, so the URL has no extension.
 
@@ -104,14 +136,18 @@ No test framework — disproportionate here. Checklist instead:
 
 - [x] Both pages return 200 at the custom domain
 - [x] `/howto` redirects to `/howto/` and serves the guide
-- [x] Two-column blocks present and stacking below 43rem
-- [ ] HTTPS certificate issued and Enforce HTTPS enabled (pending, up to 24h)
-- [ ] Collaborator invite accepted
+- [x] Two-column blocks present and stacking below 44rem
+- [x] HTTPS certificate issued, Enforce HTTPS on, `www` redirects to apex
+- [x] Day/night toggle switches and persists; no flash of wrong theme on load
+- [x] Family cards share one row at equal height (measured, not eyeballed)
+- [x] Outbound links verified live before shipping
+- [ ] Collaborator invite sent and accepted
 
 ## Open items
 
 - Three optional AAAA records remain unadded (one of four present). Cosmetic —
   affects IPv6-only visitors only.
-- Home page copy is placeholder and needs real content about Rhys.
-- Prompt bank is generic; personalising it to Rhys's actual interests would make
-  the guide meaningfully better.
+- Home page copy is still generic and needs real content about Rhys.
+- The sixteen idea stickers are guesses. Replacing several with Rhys's actual
+  interests would make the page land much harder.
+- Prompt bank is generic for the same reason.
