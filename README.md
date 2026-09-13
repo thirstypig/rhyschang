@@ -31,7 +31,7 @@ No dev server and no port claimed in the registry. Open `index.html` in a
 browser, or if you want real URLs:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 3150
 ```
 
 ## Deploying
