@@ -56,4 +56,4 @@ mistake and breaks the connection.
 ## Docs
 
 - [`docs/superpowers/specs/2026-07-31-rhyschang-site-design.md`](docs/superpowers/specs/2026-07-31-rhyschang-site-design.md) — design decisions and rationale
-- [`MASTER-PORTS.md`](MASTER-PORTS.md) / [`PORTS.md`](PORTS.md) — workspace-wide port registry (mirrored copies, per convention)
+- `MASTER-PORTS.md` — workspace-wide port registry: a local copy synced from `~/Projects/MASTER-PORTS.md`, kept out of git because this repo is public
